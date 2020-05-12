@@ -1,0 +1,22 @@
+{
+  "name": "itm",
+  "version": "1.0.0",
+  "description": "website for income tax management system",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aman-ku/Income-Tax-Management.git"
+  },
+  "author": "Aman Kumar and Shubham Bharadwaj",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/aman-ku/Income-Tax-Management/issues"
+  },
+  "homepage": "https://github.com/aman-ku/Income-Tax-Management#readme",
+  "dependencies": {
+    "mysql": "^2.18.1"
+  }
+}
