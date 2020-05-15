@@ -8,7 +8,7 @@ var flash=require('connect-flash');
 var app=express();
 
 app.set('view engine','ejs');
-require('./config/passport.ejs');
+require('./config/passport.js')(passport);
 
 
 app.use(morgan('dev'));
