@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+   <title>Add User</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial scale=1">
+     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+
+     
+       <style>
+           .content{
+               width:1200px;
+               height:800px;
+               text-align: center;
+               border: 2px solid skyblue;
+               padding: 35px 30px;
+               border-radius: 25px;
+               margin-left: 200px;
+               margin-top: 15px;
+               margin-bottom: 200px; 
+               margin-top: 50px;
+           }
+           
+           .header {
+               background: skyblue;
+               text-align: center;
+               height:200px;
+           }
+          
+           .header h2{
+               font-size: 48px;
+               font-weight: 500;
+               letter-spacing: 2px;
+               color: greenyellow;
+           }
+           
+           .header p{
+               font-size: 24px;
+               font-weight:500;
+               letter-spacing: 2px;
+               color: greenyellow;
+               
+           }
+       
+       </style>
+    </head>
+    <body>
+    
+    
+    
+        
+           <div class="header">    
+            <h2>Welcome Admin</h2>
+            <p >Fill the form to add the user.</p> 
+            </div>
+               
+           <div class="content">
+            <form>
+          <div class="form-row">
+           <div class="form-group col-md-6">
+              <label for="FName">First Name</label>
+              <input type="text" class="form-control" id="FName" placeholder="First Name">
+            </div>
+            <div class="form-group col-md-6">
+              <label for="LName">Last Name</label>
+              <input type="text" class="form-control" id="LName" placeholder="Last Name">
+            </div>
+            <div class="form-group col-md-6">
+              <label for="inputEmail4">Email</label>
+              <input type="email" class="form-control" id="inputEmail4" placeholder="Email">
+            </div>
+            <div class="form-group col-md-6">
+              <label for="inputPassword4">Password</label>
+              <input type="password" class="form-control" id="inputPassword4" placeholder="Password">
+            </div>
+            
+          </div>
+          
+            <div class="form-row">
+                    <div class="form-group col-md-6">
+                      <label for="D.O.B">Date Of Birth</label>
+                      <input type="text" class="form-control" id="D.O.B" placeholder="Enter in dd-mm-yyyy">
+                    </div>
+                       <div class="form-group col-md-6">
+                      <label for="PersonID">PersonID</label>
+                      <input type="text" class="form-control" id="PersonID" placeholder="Enter ID">
+                    </div>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group col-md-4">
+                      <label for="Aadhar">AAdhar No.</label>
+                      <input type="text" class="form-control" id="Aadhar" placeholder="Enter Aadhar No.">
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label for="Mobile">Mobile</label>
+                        <input type="text" class="form-control" id="Mobile" placeholder="Enter Mobile no.">
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label for="Employment">Nature of Employment</label>
+                        <select id ="text" class="form-control" >
+                          <option selected>Government Employee</option>
+                          <option> Private Employee</option>
+                          <option> Business</option>
+                          <option> PSU</option>
+                        </select>
+                    </div>
+                </div>
+                
+          <div class="form-group">
+            <label for="inputAddress">Address</label>
+            <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
+          </div>
+          <div class="form-group">
+            <label for="inputAddress2">Address 2</label>
+            <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
+          </div>
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label for="inputCity">City</label>
+              <input type="text" class="form-control" id="inputCity">
+            </div>
+            <div class="form-group col-md-4">
+              <label for="inputState">State</label>
+              <select id="inputState" class="form-control">
+                <option selected>Uttar Pradesh</option>
+                <option>Madhya Pradesh</option>
+                <option>Andhra Pradesh</option>
+                <option>Himachal Pradesh</option>
+                <option>Arunachal Pradesh</option>
+                <option>Rajasthan</option>
+                <option>Gujarat</option>
+                <option>Maharashstra</option>
+                <option>Kerela</option>
+                <option>Tamil Nadu</option>
+                <option>Bihar</option>
+                <option>Jharkhand</option>
+                <option>West Bengal</option>
+                <option>Orissa</option>
+                <option>Punjab</option>
+                <option>Harayana</option>
+              </select>
+            </div>
+            <div class="form-group col-md-2">
+              <label for="inputZip">PIn Code</label>
+              <input type="number" class="form-control" id="inputZip">
+            </div>
+          </div>
+          
+          <div class="form-group">
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" id="gridCheck">
+              <label class="form-check-label" for="gridCheck">
+                    Check me out
+              </label>
+            </div>
+          </div>
+          
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+        </div>  
+            
+        <!-- JS, Popper.js, and jQuery -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script> 
+    
+        </body>
+</html>

@@ -9,7 +9,7 @@ module.exports=function(app,passport)
     });
 
     app.post('/login',passport.authenticate('local-login',{
-        successRedirect:'/profile',
+        successRedirect:'/admin',
         failureRedirect:'/login',
         failureFlash:true
     }),
@@ -28,15 +28,19 @@ module.exports=function(app,passport)
     });
 
     app.post('/signup',passport.authenticate('local-signup',{
-        successRedirect:'/profile',
+        successRedirect:'/admin',
         failureRedirect:'/signup',
         failureFlash:true
     }));
 
-    app.get('/profile',isLoggedIn,function(req,res){
-        res.render('profile',{
+    app.get('/admin',isLoggedIn,function(req,res){
+        res.render('admin',{
             user:req.user
         });
+    });
+
+    app.get('/add_user',function(req,res){
+        res.render('add_user');
     });
 
     app.get('/logout',function(req,res){
