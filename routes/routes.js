@@ -1,5 +1,7 @@
 module.exports=function(app,passport)
 {
+    var upd;
+   
     app.get('/',function(req,res){
         res.render('index');
     });
@@ -47,6 +49,12 @@ module.exports=function(app,passport)
         res.render('delete_user');
     });
 
+    app.get('/update_user',function(req,res){
+        res.render('update_user',{variable:upd});
+    }); 
+
+   
+   
     app.get('/logout',function(req,res){
         req.logout();
         res.redirect('/');

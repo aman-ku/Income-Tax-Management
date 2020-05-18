@@ -4,3 +4,4 @@ create table admins(
     password varchar(1000),
     primary key(id)
 );
+
