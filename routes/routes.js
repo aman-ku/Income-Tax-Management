@@ -43,6 +43,10 @@ module.exports=function(app,passport)
         res.render('add_user');
     });
 
+    app.get('/delete_user',function(req,res){
+        res.render('delete_user');
+    });
+
     app.get('/logout',function(req,res){
         req.logout();
         res.redirect('/');

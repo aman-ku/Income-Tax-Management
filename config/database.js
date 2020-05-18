@@ -4,6 +4,6 @@ module.exports={
         'user':'root',
         'password':'kumar@123'
     },
-    'database':'admin',
+    'database':'Tax_1',
     'user_table':'admins'
 }
