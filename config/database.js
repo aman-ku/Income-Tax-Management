@@ -5,5 +5,5 @@ module.exports={
         'password':'kumar@123'
     },
     'database':'Tax_1',
-    'user_table':'admins'
+    // 'user_table':'admins'
 }

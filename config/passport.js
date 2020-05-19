@@ -3,9 +3,10 @@ var LocalStrategy = require("passport-local").Strategy;
 var mysql = require('mysql');
 var bcrypt = require('bcrypt-nodejs');
 var dbconfig = require('./database');
-var connect = mysql.createConnection(dbconfig.connection);
+var connect  = mysql.createConnection(dbconfig.connection);
 
 connect.query('USE ' + dbconfig.database);
+console.log("login database connected succesfully");
 
 module.exports = function(passport) {
  passport.serializeUser(function(user, done){
