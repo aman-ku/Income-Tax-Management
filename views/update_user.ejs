@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
    <head>
-   <title>Add User</title>
+   <title>Update</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial scale=1">
      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
@@ -10,15 +10,15 @@
      
        <style>
            .content{
-               width:800px;
-               height:230px;
+               width:1200px;
+               height:400px;
                text-align: center;
                border: 2px solid limegreen;
                padding: 35px 30px;
                border-radius: 25px;
-               margin-left: 350px;
+               margin-left: 200px;
                margin-top: 15px;
-               margin-bottom: 100px; 
+               margin-bottom: 200px; 
                margin-top: 50px;
            }
            
@@ -52,40 +52,53 @@
         
            <div class="header">    
             <h2>Welcome Admin</h2>
-            <p >Select to update.</p> 
+            <p >Enter details to Update user.</p> 
             </div>
                
            <div class="content">
-            <form>
+            <form action="/update_user" method="post">
+          <div class="form-row">
+           <div class="form-group col-md-6">
+              <label for="FName">First Name</label>
+              <input type="text" class="form-control" id="FName" name="first" placeholder="First Name">
+            </div>
+            <div class="form-group col-md-6">
+              <label for="LName">Last Name</label>
+              <input type="text" class="form-control" id="LName" name="last" placeholder="Last Name">
+            </div>
+            
+            
+          </div>
           
-                  <div class="form-row">
+          
+          <div class="form-row">
                     
-                    <div class="form-group col-md-8">
-                        <label for="Employment">Select attribute</label>
-                        <select class="form-control" name="update" >
-                          <option selected value="1">First_Name</option>
-                          <option value="2">Last_Name</option>
-                          <option value="3"> Email</option>
-                          <option value="4"> Date_of_Birth</option>
-                          <option value="5"> PersonId</option>
-                          <option value="6"> Aadhar_Id</option>
-                          <option value="7"> Mobile</option> 
-                          <option value="8"> Nature_of_Employement</option> 
-                          <option value="9"> Address</option>
-                          <option value="10"> Address2</option>
-                          <option value="11"> City</option>
-                          <option value="12"> State</option>
-                          <option value="13"> Pin Code</option>
-                        </select>
+                    <div class="form-group col-md-12">
+                        <label for="Employment">Person ID</label>
+                        <input type="text" class="form-control" name="pid" placeholder="Enter ID">
                     </div>
-                </div><br/><br/>
-     
-                
+                </div>
+                <div class="form-row">
+                    
+                    <div class="form-group col-md-12">
+                        <label for="Employment">Attribute to be update</label>
+                        <input type="text" class="form-control" name="attr" placeholder="f_name,l_name,email,password,dob,aadhar_no,mobile,noe,addr_1,addr_2,city,state,pincodes">
+                    </div>
+                </div>
+                <div class="form-row">
+                    
+                    <div class="form-group col-md-12">
+                        <label for="Employment">New Value</label>
+                        <input type="text" class="form-control" name="nval">
+                    </div>
+                </div>
+          
+
+        
+          
   <button type="submit" class="btn btn-primary">Submit</button>
 </form>
         </div>  
-        
-       
             
         <!-- JS, Popper.js, and jQuery -->
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>

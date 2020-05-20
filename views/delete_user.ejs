@@ -57,15 +57,15 @@
             </div>
                
            <div class="content">
-            <form>
+            <form action="/delete_user"  method="post">
           <div class="form-row">
            <div class="form-group col-md-6">
               <label for="FName">First Name</label>
-              <input type="text" class="form-control" id="FName" placeholder="First Name">
+              <input type="text" class="form-control" id="FName" name="first" placeholder="First Name">
             </div>
             <div class="form-group col-md-6">
               <label for="LName">Last Name</label>
-              <input type="text" class="form-control" id="LName" placeholder="Last Name">
+              <input type="text" class="form-control" id="LName" name="last" placeholder="Last Name">
             </div>
             
             
@@ -75,8 +75,8 @@
           <div class="form-row">
                     
                     <div class="form-group col-md-12">
-                        <label for="Employment">Customer ID</label>
-                        <input type="text" class="form-control" placeholder="Enter ID">
+                        <label for="Employment">Person ID</label>
+                        <input type="text" class="form-control" name="pid" placeholder="Enter ID">
                     </div>
                 </div>
           
@@ -86,12 +86,7 @@
                     
                     <div class="form-group col-md-12">
                         <label for="Employment">Nature of Employment</label>
-                        <select id ="text" class="form-control" >
-                          <option selected>Government Employee</option>
-                          <option> Private Employee</option>
-                          <option> Business</option>
-                          <option> PSU</option>
-                        </select>
+                        <input type="text" class="form-control" name="employment" placeholder="PSU,Private">
                     </div>
                 </div>
                 

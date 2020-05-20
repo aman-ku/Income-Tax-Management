@@ -6,8 +6,6 @@ var dbconfig = require('./database');
 var connect  = mysql.createConnection(dbconfig.connection);
 
 connect.query('USE ' + dbconfig.database);
-console.log("login database connected succesfully");
-
 module.exports = function(passport) {
  passport.serializeUser(function(user, done){
   done(null, user.id);
@@ -18,6 +16,7 @@ module.exports = function(passport) {
    function(err, rows){
     done(err, rows[0]);
    });
+   
  });
 
  passport.use(
