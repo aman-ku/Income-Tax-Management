@@ -71,6 +71,14 @@ var connection = mysql.createConnection({
     
 });
 
+app.get('/moreinfo_1',function(req,res){
+    res.render('moreinfo_1');
+})
+
+app.get('/moreinfo_2',function(req,res){
+    res.render('moreinfo_2');
+});
+
 app.post('/delete_user',function(req,res,err){
     if(err)
     {
