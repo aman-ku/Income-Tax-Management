@@ -129,6 +129,29 @@ app.post('/delete_user',function(req,res,err){
     }
     // var id=parseInt(req.body.pid);
     // console.log(id);
+    
+    var del="DELETE FROM tax WHERE person_id = ?";
+    connection.query(del,req.body.pid,function(err,results,fields){
+        if(err)
+        {
+            console.log(err);
+        }
+        
+        console.log('Deleted Rows:',results.affectedRows);
+        // res.redirect('/add_user');
+        
+    });
+    var del="DELETE FROM gross_income WHERE person_id = ?";
+    connection.query(del,req.body.pid,function(err,results,fields){
+        if(err)
+        {
+            console.log(err);
+        }
+        
+        console.log('Deleted Rows:',results.affectedRows);
+        // res.redirect('/add_user');
+        
+    });
     var del="DELETE FROM tax_payer WHERE person_id = ?";
     connection.query(del,req.body.pid,function(err,results,fields){
         if(err)
