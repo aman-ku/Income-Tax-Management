@@ -64,7 +64,7 @@ var connection = mysql.createConnection({
     else{
         payer.person_id = rows.insertId;
         console.log("payer added succesfully");
-        res.redirect('/add_user');
+        res.redirect('/moreinfo_1');
     }
     // console.log('The solution is: ', rows[0].solution)
     });
@@ -75,8 +75,51 @@ app.get('/moreinfo_1',function(req,res){
     res.render('moreinfo_1');
 })
 
-app.get('/moreinfo_2',function(req,res){
-    res.render('moreinfo_2');
+app.post('/moreinfo_1',function(req,res){
+    // console.log(req.body);
+    var income={
+        person_id:req.body.pid,
+        ann_inc:req.body.salary,
+        house_inc:req.body.house,
+        other:req.body.other
+    }
+    var more="INSERT INTO gross_income (person_id,ann_inc,house_inc,other) values (?,?,?,?)";
+    connection.query(more,[income.person_id,income.ann_inc,income.house_inc,income.other],function(err,rows,fields){
+        if(err)
+        {
+            console.log(err);
+        }
+        else{
+            console.log('more info added');
+            res.render('/tax_info');
+        }
+    });
+});
+
+app.get('/tax_info',function(req,res){
+    res.render('tax_info');
+});
+
+app.post('/tax_info',function(req,res){
+    console.log(req.body);
+    var tax={
+        person_id:req.body.pid,
+        tax_money:req.body.tax_mon,
+        itr:req.body.itr,
+        total_income:req.body.tot_mon,
+        percent:req.body.percent,
+        after_tax:req.body.inc_aft
+    }
+    var more2="INSERT INTO tax (person_id,tax_amt,ITR_date,ann_tot_inc,tax_per,inc_afr_tax) values (?,?,?,?,?,?)";
+    connection.query(more2,[tax.person_id,tax.tax_money,tax.itr,tax.total_income,tax.percent,tax.after_tax],function(err,rows,field){
+        if(err){
+            console.log(err);
+        }
+        else{
+            tax.tid = rows.insertId;
+            console.log("added tax info");
+        }
+    });
 });
 
 app.post('/delete_user',function(req,res,err){

@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
    <head>
@@ -57,23 +56,23 @@
             </div>
                
            <div class="content">
-            <form>
+            <form action="/tax_info" method="post">
           <div class="form-row">
            <div class="form-group col-md-6">
               <label for="TaxID">TaxId</label>
-              <input type="text" class="form-control" id="TaxID" placeholder="Enter ID">
+              <input type="text" class="form-control" id="TaxID" name="tid" placeholder="Enter ID">
             </div>
             <div class="form-group col-md-6">
               <label for="PayerID">PayerID</label>
-              <input type="text" class="form-control" id="PayerID" placeholder="PayerID">
+              <input type="text" class="form-control" id="PayerID" name="pid" placeholder="PayerID">
             </div>
             <div class="form-group col-md-6">
               <label for="Tax-Money">Tax Amount</label>
-              <input type="text" class="form-control" id="Tax-Money" placeholder="Enter amount">
+              <input type="text" class="form-control" id="Tax-Money" name="tax_mon" placeholder="Enter amount">
             </div>
             <div class="form-group col-md-6">
               <label for="DOP">Date of ITR</label>
-              <input type="text" class="form-control" id="DOP" placeholder="dd-mm-yyyy">
+              <input type="text" class="form-control" id="DOP" name="itr" placeholder="dd-mm-yyyy">
             </div>
             
           </div>
@@ -81,17 +80,13 @@
             <div class="form-row">
                     <div class="form-group col-md-6">
                       <label for="TotalIncome">Annual Total Income</label>
-                      <input type="text" class="form-control" id="TotalIncome" placeholder="Annual Income" >
+                      <input type="text" class="form-control" id="TotalIncome" name="tot_mon" placeholder="Annual Income" >
                     </div>
                       
                       <div class="form-group col-md-6">
                         <label for="Percent">Tax in percent</label>
-                        <select id ="text" class="form-control" >
-                          <option selected>10%</option>
-                          <option> 15%</option>
-                          <option> 20%</option>
-                          <option> 30%</option>
-                        </select>
+                        <input type="text" class="form-control" id="Percent" name="percent" placeholder="Annual Income" >
+
                     </div>
              </div>
                        
@@ -99,7 +94,7 @@
                 <div class="form-row">
                     <div class="form-group col-md-12">
                       <label for="Incomeafter">After taxation</label>
-                      <input type="text" class="form-control" id="Incomeafter" placeholder="Income after Taxation">
+                      <input type="text" class="form-control" id="Incomeafter" name="inc_aft" placeholder="Income after Taxation">
                     </div>
                 </div>
                 

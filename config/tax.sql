@@ -1,5 +1,7 @@
-drop table admins;
-drop table tax_payer;
+-- drop table admins;
+-- drop table tax_payer;
+-- drop table gross_income;
+-- drop table tax;
 
 create table admins(
     id int NOT NULL AUTO_INCREMENT,
@@ -26,3 +28,23 @@ create table tax_payer(
     primary key(person_id)
 );
 
+create table gross_income(
+    person_id  INT,
+    ann_inc INT,
+    house_inc INT,
+    other INT,
+    -- PRIMARY KEY(person_id),
+    FOREIGN KEY (person_id) REFERENCES tax_payer(person_id)
+);
+
+create table tax(
+    tax_id INT NOT NULL AUTO_INCREMENT,
+    person_id INT,
+    tax_amt INT,
+    ITR_date varchar(20),
+    ann_tot_inc INT,
+    tax_per varchar(5),
+    inc_afr_tax INT,
+    primary key(tax_id),
+    FOREIGN KEY (person_id) REFERENCES tax_payer(person_id) 
+);
