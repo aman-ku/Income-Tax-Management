@@ -91,7 +91,7 @@ app.post('/moreinfo_1',function(req,res){
         }
         else{
             console.log('more info added');
-            res.render('/tax_info');
+            res.redirect('/tax_info');
         }
     });
 });
@@ -334,6 +334,43 @@ app.post('/update_user',function(req,res){
             console.log(result.affectedRows + " records updated");
         });
     }
+    if(req.body.attr=='ann_inc')
+    {
+        // console.log(req.body.pid,req.body.nval);
+        var upd="UPDATE gross_income SET ann_inc = '"+req.body.nval+"' WHERE person_id='"+req.body.pid+"' " ;
+        connection.query(upd,function(err,result){
+            if(err)
+            {
+                console.log(err);
+            }
+            console.log(result.affectedRows + " records updated");
+        });
+    }
+    if(req.body.attr=='house_inc')
+    {
+        // console.log(req.body.pid,req.body.nval);
+        var upd="UPDATE gross_income SET house_inc = '"+req.body.nval+"' WHERE person_id='"+req.body.pid+"' " ;
+        connection.query(upd,function(err,result){
+            if(err)
+            {
+                console.log(err);
+            }
+            console.log(result.affectedRows + " records updated");
+        });
+    }
+    if(req.body.attr=='other')
+    {
+        // console.log(req.body.pid,req.body.nval);
+        var upd="UPDATE gross_income SET other = '"+req.body.nval+"' WHERE person_id='"+req.body.pid+"' " ;
+        connection.query(upd,function(err,result){
+            if(err)
+            {
+                console.log(err);
+            }
+            console.log(result.affectedRows + " records updated");
+        });
+    }
+
 });
 
 
