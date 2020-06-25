@@ -10,6 +10,7 @@ create table admins(
     primary key(id)
 );
 
+
 create table tax_payer(
     person_id int NOT NULL AUTO_INCREMENT,
     f_name varchar(30),
@@ -33,7 +34,7 @@ create table gross_income(
     ann_inc INT,
     house_inc INT,
     other INT,
-    -- PRIMARY KEY(person_id),
+    PRIMARY KEY(person_id),
     FOREIGN KEY (person_id) REFERENCES tax_payer(person_id)
 );
 
@@ -45,6 +46,6 @@ create table tax(
     ann_tot_inc INT,
     tax_per varchar(5),
     inc_afr_tax INT,
-    primary key(tax_id),
-    FOREIGN KEY (person_id) REFERENCES tax_payer(person_id) 
+    primary key(tax_id)
 );
+

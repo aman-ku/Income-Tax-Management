@@ -9,8 +9,9 @@ var flash=require('connect-flash');
 var app=express();
 var bcrypt = require('bcrypt-nodejs');
 
-var mysql = require('mysql')
 
+var mysql = require('mysql')
+var salt = bcrypt.genSaltSync(10);
 
 app.use(body.urlencoded({extended: false}));
 app.use(body.json())
@@ -44,7 +45,7 @@ var connection = mysql.createConnection({
         f_name:req.body.first,
         l_name:req.body.last,
         email:req.body.email,
-        password:bcrypt.hashSync(req.body.password, null, null),
+        password:bcrypt.hashSync(req.body.password,salt),
         dob:req.body.dob,
         aadhar_no:req.body.aadhar,
         mobile:req.body.mobile,
@@ -168,15 +169,7 @@ app.post('/delete_user',function(req,res,err){
 });
 
 app.post('/update_user',function(req,res){
-    // var upd="select * from tax_payer where person_id = ?";
-    // connection.query(upd,req.body.pid,function(err,results,fields){
-    //     if(err)
-    //     {
-    //         console.log(err);
-    //     }
-    //     console.log(results[f_name]);
-    // });
-
+   
     if(req.body.attr=='f_name')
     {
         // console.log(req.body.pid,req.body.nval);
@@ -372,10 +365,107 @@ app.post('/update_user',function(req,res){
     }
 
 });
+var x;
+var id;
+app.post('/login_user',function(req,res){
+    var p=req.body.password;
+    id=req.body.ID;
+    
+    connection.query("SELECT password FROM tax_payer WHERE person_id= '"+id+"'", function (err, result, fields) {
+        if(err)
+        {
+            console.log(err);
+        }
+        else if(bcrypt.compareSync(p,result[0].password)){
+            connection.query("SELECT * FROM tax WHERE person_id= '"+id+"'", function (err, result, fields){
+                if(err)
+                {
+                    console.log(err);
+                }
+                else{
+                    x=result;
+                   res.redirect('/tax_details');
+                
+                }
+            });
+        }
+        else{
+            
+            res.json({success:false});
+        }
+      });
+      
+   
+});
+var t;
+var p;
+app.post('/any_info',function(req,res){
+    var id=req.body.id;
+    t=req.body.tax;
+    p=req.body.person;
+    if(p==="person")
+    {
+        connection.query("SELECT * FROM tax_payer WHERE person_id= '"+id+"'", function (err, result, fields){
+        if(err)
+        {
+            console.log(err);
+        }
+        else{
+            x=result;
+            res.redirect('/any_info');
+        
+        }
+        });
+    }
+    else if(t==="tax")
+    {
+        connection.query("SELECT * FROM tax WHERE person_id = '"+id+"'", function (err, result, fields){
+        if(err)
+        {
+            console.log(err);
+        }
+        else{
+            x=result;
+            res.redirect('/any_info2');
+        
+        }
+        });
+    }
+});
 
+app.get('/any_info2',function(req,res){
+    res.render('any_info2',{details:x});
+});
+
+
+app.get('/any_info',function(req,res){
+    res.render('any_info',{details:x});
+});
+
+
+app.get('/tax_details',function(req,res,next){
+    res.render('tax_details',{details:x});
+});
+
+app.post('/tax_details',function(req,res){
+    var d=req.body.date;
+    connection.query("SELECT * FROM tax WHERE ITR_date= '"+d+"'", function (err, result, fields){
+        if(err)
+        {
+            console.log(err);
+        }
+        else{
+            x=result;
+           res.redirect('/tax_details');
+        
+        }
+    });
+});
 
 app.set('view engine','ejs');
 require('./config/passport.js')(passport);
+
+
 
 
 app.use(morgan('dev'));
@@ -397,6 +487,6 @@ app.use(flash());
 
 
 require('./routes/routes.js')(app,passport,mysql,bcrypt,bodyParser);
-app.listen(3000,function(){
+app.listen(8080,function(){
     console.log('Server Started');
 });

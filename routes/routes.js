@@ -7,8 +7,22 @@ module.exports=function(app,passport)
     
 
     app.get('/',function(req,res){
+        res.render('home');
+    });
+
+    app.get('/index',function(req,res){
         res.render('index');
     });
+
+    app.get('/index_2',function(req,res){
+        res.render('index_2');
+    });
+
+    app.get('/login_user',function(req,res){
+        res.render('login_user');
+    });
+
+    
 
     app.get('/login',function(req,res){
         res.render('login',{message:req.flash('loginMessage')});
