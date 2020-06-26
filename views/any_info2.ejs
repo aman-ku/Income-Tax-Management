@@ -3,7 +3,13 @@
     <head>
         <title>Tax Details</title>
     </head>
+    <style>
+            body{
+                background-color:#a5cc82;
+            }
+    </style>
     <body>
+        <h1 style="color:cyan">Payer Tax Information</h1>
         <% for(var i=0;i<details.length;i++){ %>
         <ul>
             
@@ -17,6 +23,7 @@
             
        </ul>
        <% } %>
-       
+       <div>Go Back To <a href="/admin">Previous Page</a></div>
+       <div>Go Back To <a href="/">Home Page</a></div>   
     </body>
 </html>

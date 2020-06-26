@@ -21,7 +21,7 @@ var connection = mysql.createConnection({
     host: 'localhost',
     user: 'root',
     password: 'kumar@123',
-    database: 'Tax_1'
+    database: 'Project'
   });
   
   connection.connect(function(err){
@@ -118,7 +118,7 @@ app.post('/tax_info',function(req,res){
         }
         else{
             tax.tid = rows.insertId;
-            console.log("added tax info");
+            res.redirect('/admin');
         }
     });
 });
@@ -128,8 +128,7 @@ app.post('/delete_user',function(req,res,err){
     {
         console.log(err);
     }
-    // var id=parseInt(req.body.pid);
-    // console.log(id);
+    
     
     var del="DELETE FROM tax WHERE person_id = ?";
     connection.query(del,req.body.pid,function(err,results,fields){
@@ -138,8 +137,9 @@ app.post('/delete_user',function(req,res,err){
             console.log(err);
         }
         
-        console.log('Deleted Rows:',results.affectedRows);
-        // res.redirect('/add_user');
+        
+        
+       
         
     });
     var del="DELETE FROM gross_income WHERE person_id = ?";
@@ -150,7 +150,7 @@ app.post('/delete_user',function(req,res,err){
         }
         
         console.log('Deleted Rows:',results.affectedRows);
-        // res.redirect('/add_user');
+        
         
     });
     var del="DELETE FROM tax_payer WHERE person_id = ?";
@@ -160,8 +160,7 @@ app.post('/delete_user',function(req,res,err){
             console.log(err);
         }
         
-        console.log('Deleted Rows:',results.affectedRows);
-        res.redirect('/add_user');
+        res.redirect('/admin');
         
     });
     
@@ -179,7 +178,8 @@ app.post('/update_user',function(req,res){
             {
                 console.log(err);
             }
-            console.log(result.affectedRows + " records updated");
+            // console.log(result.affectedRows + " records updated");
+            res.redirect('/admin');
         });
     }
     if(req.body.attr=='l_name')
@@ -191,7 +191,8 @@ app.post('/update_user',function(req,res){
             {
                 console.log(err);
             }
-            console.log(result.affectedRows + " records updated");
+            // console.log(result.affectedRows + " records updated");
+            res.redirect('/admin');
         });
     }
     if(req.body.attr=='email')
@@ -203,7 +204,8 @@ app.post('/update_user',function(req,res){
             {
                 console.log(err);
             }
-            console.log(result.affectedRows + " records updated");
+            // console.log(result.affectedRows + " records updated");
+            res.redirect('/admin');
         });
     }
     if(req.body.attr=='password')
@@ -216,7 +218,8 @@ app.post('/update_user',function(req,res){
             {
                 console.log(err);
             }
-            console.log(result.affectedRows + " records updated");
+            // console.log(result.affectedRows + " records updated");
+            res.redirect('/admin');
         });
     }
     if(req.body.attr=='dob')
@@ -228,7 +231,8 @@ app.post('/update_user',function(req,res){
             {
                 console.log(err);
             }
-            console.log(result.affectedRows + " records updated");
+            // console.log(result.affectedRows + " records updated");
+            res.redirect('/admin');
         });
     }
     if(req.body.attr=='aadhar_no')
@@ -240,7 +244,8 @@ app.post('/update_user',function(req,res){
             {
                 console.log(err);
             }
-            console.log(result.affectedRows + " records updated");
+            // console.log(result.affectedRows + " records updated");
+            res.redirect('/admin');
         });
     }
     if(req.body.attr=='mobile')
@@ -252,7 +257,8 @@ app.post('/update_user',function(req,res){
             {
                 console.log(err);
             }
-            console.log(result.affectedRows + " records updated");
+            // console.log(result.affectedRows + " records updated");
+            res.redirect('/admin');
         });
     }
     if(req.body.attr=='noe')
@@ -264,7 +270,8 @@ app.post('/update_user',function(req,res){
             {
                 console.log(err);
             }
-            console.log(result.affectedRows + " records updated");
+            // console.log(result.affectedRows + " records updated");
+            res.redirect('/admin');
         });
     }
     if(req.body.attr=='addr_1')
@@ -276,7 +283,8 @@ app.post('/update_user',function(req,res){
             {
                 console.log(err);
             }
-            console.log(result.affectedRows + " records updated");
+            // console.log(result.affectedRows + " records updated");
+            res.redirect('/admin');
         });
     }
     if(req.body.attr=='addr_2')
@@ -288,7 +296,8 @@ app.post('/update_user',function(req,res){
             {
                 console.log(err);
             }
-            console.log(result.affectedRows + " records updated");
+            // console.log(result.affectedRows + " records updated");
+            res.redirect('/admin');
         });
     }
     if(req.body.attr=='city')
@@ -300,7 +309,8 @@ app.post('/update_user',function(req,res){
             {
                 console.log(err);
             }
-            console.log(result.affectedRows + " records updated");
+            // console.log(result.affectedRows + " records updated");
+            res.redirect('/admin');
         });
     }
     if(req.body.attr=='state')
@@ -312,7 +322,8 @@ app.post('/update_user',function(req,res){
             {
                 console.log(err);
             }
-            console.log(result.affectedRows + " records updated");
+            // console.log(result.affectedRows + " records updated");
+            res.redirect('/admin');
         });
     }
     if(req.body.attr=='pincode')
@@ -324,7 +335,8 @@ app.post('/update_user',function(req,res){
             {
                 console.log(err);
             }
-            console.log(result.affectedRows + " records updated");
+            // console.log(result.affectedRows + " records updated");
+            res.redirect('/admin');
         });
     }
     if(req.body.attr=='ann_inc')
@@ -336,7 +348,8 @@ app.post('/update_user',function(req,res){
             {
                 console.log(err);
             }
-            console.log(result.affectedRows + " records updated");
+            // console.log(result.affectedRows + " records updated");
+            res.redirect('/admin');
         });
     }
     if(req.body.attr=='house_inc')
@@ -348,7 +361,8 @@ app.post('/update_user',function(req,res){
             {
                 console.log(err);
             }
-            console.log(result.affectedRows + " records updated");
+            // console.log(result.affectedRows + " records updated");
+            res.redirect('/admin');
         });
     }
     if(req.body.attr=='other')
@@ -360,7 +374,8 @@ app.post('/update_user',function(req,res){
             {
                 console.log(err);
             }
-            console.log(result.affectedRows + " records updated");
+            // console.log(result.affectedRows + " records updated");
+            res.redirect('/admin');
         });
     }
 
@@ -487,6 +502,6 @@ app.use(flash());
 
 
 require('./routes/routes.js')(app,passport,mysql,bcrypt,bodyParser);
-app.listen(8080,function(){
+app.listen(8000,function(){
     console.log('Server Started');
 });
