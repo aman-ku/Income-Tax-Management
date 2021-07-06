@@ -7,9 +7,9 @@ Overview-
 
 Step to run-
 
-1)Install the vscode and in that install the html,css,javascript.
+1)Install the vscode and in that install the html,css,javascript extension.
 
-2)In vscode install nodejs,and mysql extension(SQL Server(mysql),SQLtool,vscode Database).Now connect 	the database(phpmyadmin) with vscode.
+2)In vscode install nodejs,and mysql extension(SQL Server(mysql),SQLtool,vscode Database).Now connect the database(phpmyadmin) with vscode.
 
 3)Now run the project by writing “node app.js” in the terminal.
 
