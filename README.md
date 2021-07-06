@@ -24,6 +24,19 @@ In making of this project I have used NodeJs framework for web app.For database 
 ### Admin updating user
 ![Income-Tax_Management](https://github.com/aman-ku/Income-Tax-Management/blob/9a5e2044a7205f400ba1b8bebead27458f26af1d/images/Screenshot%20from%202021-07-06%2009-21-40.png)
 
+### Admin checking the details of particular user for verification
+![Income-Tax_Management](https://github.com/aman-ku/Income-Tax-Management/blob/93173555539df35a884f2ec68695979c609ecbd4/images/Screenshot%20from%202021-07-06%2009-20-41.png)
+![Income-Tax_Management](https://github.com/aman-ku/Income-Tax-Management/blob/93173555539df35a884f2ec68695979c609ecbd4/images/Screenshot%20from%202021-07-06%2009-20-48.png)
+![Income-Tax_Management](https://github.com/aman-ku/Income-Tax-Management/blob/93173555539df35a884f2ec68695979c609ecbd4/images/Screenshot%20from%202021-07-06%2009-20-58.png)
+
+### User Login and their information Page
+![Income-Tax_Management](https://github.com/aman-ku/Income-Tax-Management/blob/93173555539df35a884f2ec68695979c609ecbd4/images/Screenshot%20from%202021-07-06%2009-22-03.png)
+![Income-Tax_Management](https://github.com/aman-ku/Income-Tax-Management/blob/93173555539df35a884f2ec68695979c609ecbd4/images/Screenshot%20from%202021-07-06%2009-22-23.png)
+
+### xampp(phpmyadmin) server
+![Income-Tax_Management](https://github.com/aman-ku/Income-Tax-Management/blob/93173555539df35a884f2ec68695979c609ecbd4/images/Screenshot%20from%202021-07-06%2009-23-59.png)
+![Income-Tax_Management](https://github.com/aman-ku/Income-Tax-Management/blob/93173555539df35a884f2ec68695979c609ecbd4/images/Screenshot%20from%202021-07-06%2009-23-52.png)
+![Income-Tax_Management](https://github.com/aman-ku/Income-Tax-Management/blob/93173555539df35a884f2ec68695979c609ecbd4/images/Screenshot%20from%202021-07-06%2009-23-46.png)
 
 
 
