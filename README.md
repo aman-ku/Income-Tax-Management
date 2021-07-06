@@ -7,15 +7,9 @@ So,our objective in this project to create tax information management system in 
 ## Technologies Used
 In making of this project I have used NodeJs framework for web app.For database I have used Mysql(relational database) which is hosted on xampp server.At last I run the project at "http://localhost:8000/”.
 
-<<<<<<< HEAD
-1)Install the vscode and in that install the html,css,javascript extension.
-
-2)In vscode install nodejs,and mysql extension(SQL Server(mysql),SQLtool,vscode Database).Now connect the database(phpmyadmin) with vscode.
-=======
 ## Below are some screen shot of this web app
-
->>>>>>> f8a2891b8bf8be505db1d18f73266948c8fc5235
-
+### Home Page
+![Income-Tax_Management][https://github.com/aman-ku/Income-Tax-Management/blob/459798cf247e0a7157a2b4f98e217e06b09a5126/images/Screenshot%20from%202021-07-06%2009-01-39.png]
 
 
 
