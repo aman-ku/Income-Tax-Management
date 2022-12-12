@@ -24,7 +24,7 @@
     "cookie-parser": "^1.4.5",
     "dateformat": "^3.0.3",
     "ejs": "^3.1.2",
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "express-partials": "^0.3.0",
     "express-session": "^1.17.1",
     "morgan": "^1.10.0",
